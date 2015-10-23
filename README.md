@@ -26,3 +26,22 @@ export ANDROID_TOOLS="/root/software/adt-bundle-linux-x86-20140702/sdk/tools"
 export ANDROID_PLATFORM_TOOLS="/root/software/adt-bundle-linux-x86-20140702/sdk/platform-tools"
 
 PATH=$PATH:$ANDROID_HOME:$ANDROID_TOOLS:$ANDROID_PLATFORM_TOOLS:.
+
+Start server
+python -m SimpleHTTPServer 8000
+
+TASKKILL /F /IM chrome.exe
+start chrome.exe --args --disable-web-security
+chromium-browser --disable-web-security
+ For OSX, open Terminal and run:
+
+$ open -a Google\ Chrome --args --disable-web-security
+For Linux run:
+
+$ google-chrome --disable-web-security
+Also if you're trying to access local files for dev purposes like AJAX or JSON, you can use this flag too.
+
+-–allow-file-access-from-files
+For PC go into the command prompt and go into the folder where Chrome.exe is and type
+
+chrome.exe --disable-web-security
